@@ -1,6 +1,5 @@
 validation-*.json
 node_modules
 _gh_pages
-dist
 src/vendor
 bower_components
