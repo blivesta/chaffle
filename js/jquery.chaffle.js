@@ -2,8 +2,8 @@
  * chaffle v1.0.0
  * 
  * Licensed under MIT
- * Copyright 2013-2014 blivesta
- * http://blivesta.com
+ * Author : blivesta
+ * 
  */
 (function($) {
   var namespace = "chaffle";
