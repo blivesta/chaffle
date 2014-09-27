@@ -1,5 +1,8 @@
-validation-*.json
 node_modules
-_gh_pages
-src/vendor
 bower_components
+validation-*.json
+_gh_pages
+docs/assets/css
+docs/vendor
+docs/css
+docs/js

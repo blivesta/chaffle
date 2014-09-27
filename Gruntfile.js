@@ -14,15 +14,15 @@
       ' * <%= pkg.name %> v<%= pkg.version %>\n' +
       ' * <%= pkg.url %>\n' +
       ' * Licensed under <%= pkg.licenses %>\n' +
-      ' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-      ' * <%= pkg.authorUrl %>\n' +
+      ' * Author : <%= pkg.author %>\n' +
+      ' * <%= pkg.author_url %>\n' +
       ' */\n',
     // ====================================================
     clean: {
       files: [
         '<%= pkg.dist %>',
-        '<%= pkg.source %>/js/<%= pkg.name %>.js',
-        '<%= pkg.source %>/js/<%= pkg.name %>.min.js',
+        '<%= pkg.docs %>/js/*.js',
+        '<%= pkg.docs %>/css/*.css',
         '<%= pkg.public %>'
       ]
     },
@@ -34,10 +34,10 @@
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapURL: ['<%= pkg.name %>.css.map'],
-          sourceMapFilename: '<%= pkg.source %>/css/<%= pkg.name %>.css.map'
+          sourceMapFilename: '<%= pkg.docs %>/css/<%= pkg.name %>.css.map'
         },
         files: {
-          '<%= pkg.source %>/css/<%= pkg.name %>.css': '<%= pkg.source %>/less/<%= pkg.name %>.less'
+          '<%= pkg.docs %>/css/<%= pkg.name %>.css': '<%= pkg.source %>/less/<%= pkg.name %>.less'
         } 
       },
       minify: {
@@ -45,20 +45,56 @@
           cleancss: true
         },
         files: {
-          '<%= pkg.source %>/css/<%= pkg.name %>.min.css': '<%= pkg.source %>/css/<%= pkg.name %>.css'
+          '<%= pkg.docs %>/css/<%= pkg.name %>.min.css': '<%= pkg.docs %>/css/<%= pkg.name %>.css'
+        }
+      },
+      docs: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: ['<%= pkg.name %>.css.map'],
+          sourceMapFilename: '<%= pkg.assets %>/css/docs.css.map'
+        },
+        files: {
+          '<%= pkg.assets %>/css/docs.css': '<%= pkg.assets %>/less/docs.less'
+        } 
+      },
+      docsMin: {
+        options: {
+          cleancss: true
+        },
+        files: {
+          '<%= pkg.assets %>/css/docs.min.css': '<%= pkg.assets %>/css/docs.css'
         }
       }
+
     },
     // ====================================================
     autoprefixer: {
       options: {
-        browsers: ['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12']
+        browsers: [
+          'Android 2.3',
+          'Android >= 4',
+          'Chrome >= 20',
+          'Firefox >= 24', // Firefox 24 is the latest ESR
+          'Explorer >= 8',
+          'iOS >= 6',
+          'Opera >= 12',
+          'Safari >= 6'
+        ]
       },
       source: {
         options: {
           map: true
         },
-        src: '<%= pkg.source %>/css/<%= pkg.name %>.css'
+        src: '<%= pkg.docs %>/css/<%= pkg.name %>.css'
+      },
+      docs: {
+        options: {
+          map: true
+        },
+        src: '<%= pkg.assets %>/css/docs.css'
       }
     },
     // ====================================================
@@ -68,9 +104,15 @@
       },
       source: {
         expand: true,
-        cwd: '<%= pkg.source %>/css/',
+        cwd: '<%= pkg.docs %>/css/',
         src: ['*.css', '!*.min.css'],
-        dest: '<%= pkg.source %>/css/'
+        dest: '<%= pkg.docs %>/css/'
+      },
+      docs: {
+        expand: true,
+        cwd: '<%= pkg.assets %>/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: '<%= pkg.assets %>/css/'
       }
     },    
     // ====================================================
@@ -80,7 +122,10 @@
         banner: '<%= banner %>'
       },
       source: {
-        src: '<%= pkg.source %>/css/*.css'
+        src: '<%= pkg.docs %>/css/*.css'
+      },
+      docs: {
+        src: '<%= pkg.assets %>/css/*.css'
       }
     },
     // ====================================================
@@ -89,7 +134,8 @@
         csslintrc: '<%= pkg.source %>/less/.csslintrc'
       },
       source: [
-        '<%= pkg.source %>/css/<%= pkg.name %>.css'
+        '<%= pkg.docs %>/css/<%= pkg.name %>.css',
+        '<%= pkg.assets %>/css/docs.css'
       ]
     },
     // ====================================================
@@ -106,15 +152,15 @@
           beautify: true
         },
         files :  { 
-          '<%= pkg.source %>/js/<%= pkg.name %>.js' : [
-            '<%= pkg.source %>/js/plugin.js'
+          '<%= pkg.docs %>/js/jquery.<%= pkg.name %>.js' : [
+            '<%= pkg.source %>/js/<%= pkg.name %>.js'
           ]
         } 
       },
       minify:{
         files :  { 
-          '<%= pkg.source %>/js/<%= pkg.name %>.min.js' : [
-            '<%= pkg.source %>/js/<%= pkg.name %>.js' 
+          '<%= pkg.docs %>/js/jquery.<%= pkg.name %>.min.js' : [
+            '<%= pkg.docs %>/js/jquery.<%= pkg.name %>.js' 
           ]
         } 
       }
@@ -129,48 +175,11 @@
       },
       source: {
         src: [
-          '<%= pkg.source %>/js/<%= pkg.name %>.js',
-          '<%= pkg.source %>/js/<%= pkg.name %>.min.js'
+          '<%= pkg.docs %>/js/jquery.<%= pkg.name %>.js',
+          '<%= pkg.docs %>/js/jquery.<%= pkg.name %>.min.js'
         ]
       }
     },
-    // ====================================================
-    jscs: {
-      options: {
-        config: '<%= pkg.source %>/js/.jscsrc'
-      },
-      grunt: {
-        options: {
-          requireCamelCaseOrUpperCaseIdentifiers: null,
-          requireParenthesesAroundIIFE: true
-        },
-        src: '<%= jshint.grunt.src %>'
-      },
-      source: {
-        src: '<%= jshint.source.src %>'
-      }
-    },
-    // ====================================================
-    htmlmin: {
-      publish: {
-        options: {
-          collapseBooleanAttributes: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          removeCommentsFromCDATA: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.public %>',
-          src: '{,*/}*.html',
-          dest: '<%= pkg.public %>'
-        }]
-      }
-    },     
     // ====================================================
     validation: {
       options: {
@@ -194,10 +203,10 @@
     copy: {
       dist: {
         expand: true,
-        cwd: './<%= pkg.source %>',
+        cwd: './<%= pkg.docs %>',
         src: [
-          'js/<%= pkg.name %>.js',
-          'js/<%= pkg.name %>.min.js',
+          'js/jquery.<%= pkg.name %>.js',
+          'js/jquery.<%= pkg.name %>.min.js',
           'css/*.css',
           'css/*.map'
         ],
@@ -234,7 +243,7 @@
     bower: {
       install: {
         options: {
-          targetDir: '<%= pkg.source %>/vendor',
+          targetDir: '<%= pkg.docs %>/vendor',
           layout: 'byComponent',
           install: true,
           verbose: false,
@@ -271,34 +280,46 @@
         tasks: [
           'uglify',
           'jshint:source',
-          //'jscs:source',
           'jekyll',
           'notify'
         ]
       },
       html: {
         files: [
-          '<%= pkg.source %>/*.html',
-          '<%= pkg.source %>/_includes/*',
-          '<%= pkg.source %>/_posts/*',
-          '<%= pkg.source %>/_layouts/*'
+          '<%= pkg.docs %>/*.html',
+          '<%= pkg.docs %>/_includes/*',
+          '<%= pkg.docs %>/_posts/*',
+          '<%= pkg.docs %>/_layouts/*'
         ],
         tasks: [
           'build-html',
           'notify'
         ]
       },
-      // less: {
-      //   files: [
-      //     '<%= pkg.source %>/less/*.less',
-      //     '<%= pkg.source %>/less/**/*.less'
-      //   ],
-      //   tasks: [
-      //     'build-less',
-      //     'jekyll',
-      //     'notify'
-      //   ]
-      // }
+      less: {
+        files: [
+          '<%= pkg.source %>/less/*.less',
+          '<%= pkg.source %>/less/**/*.less'
+        ],
+        tasks: [
+          'build-less',
+          'csslint',
+          'jekyll',
+          'notify'
+        ]
+      },
+      docsLess: {
+        files: [
+          '<%= pkg.assets %>/less/*.less',
+          '<%= pkg.assets %>/less/**/*.less'
+        ],
+        tasks: [
+          'build-docsLess',
+          'csslint',
+          'jekyll',
+          'notify'
+        ]
+      }
     },
     // ====================================================
     buildcontrol: {
@@ -318,58 +339,59 @@
      
   });
 
-  //publicに指定したディレクトリをgh-pagesブランチにデプロイ。
   // ====================================================
   grunt.registerTask('deploy', [
     'buildcontrol',
     'notify'
   ]);
 
-  // lessコンパイル
   // ====================================================
   grunt.registerTask('build-less', [
     'less:source', 
     'autoprefixer:source', 
-    'usebanner', 
+    'usebanner:source', 
     'csscomb:source', 
     'less:minify',
   ]);
 
-  // jsコンパイル
+  // ====================================================
+  grunt.registerTask('build-docsLess', [
+    'less:docs', 
+    'autoprefixer:docs', 
+    'usebanner:docs', 
+    'csscomb:docs', 
+    'less:docsMin',
+  ]);
+
   // ====================================================
   grunt.registerTask('build-js', [
     'uglify'
   ]);
   
-  // jekyllコンパイル
   // ====================================================
   grunt.registerTask('build-html', [
-    'jekyll',
-    //'htmlmin'
+    'jekyll'
   ]);
 
-  // js,css,htmlのテスト
   // ====================================================
   grunt.registerTask('test', [
     'jshint:source',
-    //'jscs:source',
-    //'csslint',
-    'validation'
+    // 'csslint',
+    //'validation'
   ]);
 
-  // ベンダーファイルのインストール →　コンパイル　→　テスト　→　ウォッチ
   // ====================================================
   grunt.registerTask('b', [
     'clean',
-    //'bower',
-    //'build-less',
+    'bower',
+    // 'build-less',
+    'build-docsLess',
     'build-js',
     'build-html',
     'test',
     'copy'
   ]);
   
-  // サーバー起動　→　ウオッチ
   // ====================================================
   grunt.registerTask('default', function () {
     grunt.log.warn('`grunt` to start a watch.');

@@ -1,8 +1,8 @@
 markdown:         redcarpet
 pygments:         true
 permalink:        pretty
-exclude:          ['less','vendor','*.json','Gruntfile.js','bower_components','node_modules']
-source:           ./src
+exclude:          ['less','*.json','Gruntfile.js','bower_components','node_modules']
+source:           ./docs
 destination:      ./_gh_pages
 encoding:         UTF-8
 title:            chaffle

@@ -1,0 +1,28 @@
+<p class="lead">Step 1: Link required files</p>
+{% highlight html %}
+<!-- vendor js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- {{ site.repo }} js -->
+<script src="{{ page.base_url }}dist/js/jquery.{{ site.repo }}.min.js"></script>
+{% endhighlight %}
+
+<p class="lead">Step 2: HTML markup</p>
+{% highlight html %}
+<a href="#" class="chaffle" data-lang="en">Engligh</a>
+<a href="#" class="chaffle" data-lang="ja">日本語（漢字）</a>
+<a href="#" class="chaffle" data-lang="ja-hiragana">ひらがな</a>
+<a href="#" class="chaffle" data-lang="ja-katakana">カタカナ</a>
+{% endhighlight %}
+
+
+<p class="lead">Step 3: Call the {{ site.title }}</p>
+{% highlight js %}
+$(document).ready(function() {
+  $('.chaffle').chaffle({
+    speed: 20,
+    time: 140
+  });
+}); 
+{% endhighlight %}
+

@@ -4,5 +4,14 @@
   "main": [],
   "ignore": [
     ".*"
-  ]
+  ],
+  "devDependencies": {
+    "cooker": "~0.4.8"
+  },
+  "exportsOverride": {
+    "cooker": {
+      "css": "dist/css/",
+      "less": "dist/less/"
+    }
+  }
 }
