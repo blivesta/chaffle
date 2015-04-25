@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
-  <meta name="description" content="chaffle is a jquery plug-in that allows you to shuffle randomly character.">
+  <meta name="description" content="jquery plugin that allows to shuffle randomly character.">
   
   <title>
     
-      chaffle &middot; chaffle is a jquery plug-in that allows you to shuffle randomly character.
+      chaffle &middot; jquery plugin that allows to shuffle randomly character.
     
   </title>
-  
+
   <!-- icon -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//blivesta.com/ico/touch-icon-144.png">
   <link rel="shortcut icon" href="//blivesta.com/ico/favicon.ico">
@@ -22,68 +22,33 @@
   <!-- Vendor css -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/open-iconic/1.1.0/font/css/open-iconic-bootstrap.min.css">
   <link rel="stylesheet" href="./vendor/cooker/css/cooker.css">
-  
+
   <!-- animsition docs css -->
   <link rel="stylesheet" href="./assets/css/docs.css">
 
-  <!-- Google analytics -->
-  <script src="//git.blivesta.com/js/ga.js"></script>
-
-  <!-- Vendor js -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-  <!-- chaffle js -->
-  <script src="./js/jquery.chaffle.js"></script>
-
-  <script type="text/javascript">
-  $(document).ready(function() {
-      $(".chaffle").chaffle();
-      
-  }); 
-
-  </script>
-  
 </head>
-<body class=" site-home">
-  <div class="site-wrapper animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
-    <a href="https://github.com/blivesta/chaffle" style="z-index:9999; "><img style="position: absolute; top: 0; right: 0; border: 0; z-index:9999; " src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
-<header class="header navbar navbar-default navbar-static-top" id="top" role="banner">
-  <div class="header-inner container">
-    <div class="navbar-header">
-       <a class="header-brand navbar-brand animsition-link" href="./">chaffle</a>
-    </div>
-  </div>
-</header>
+<body class="site-home">
+  <div class="site-wrapper">
 
-    
     <main class="masthead" role="main">
   <div class="container">
     <h1>chaffle</h1>
-    <p class="lead">chaffle is a jquery plug-in that allows you to shuffle randomly character.</p>
+    <p class="lead">jquery plugin that allows to shuffle randomly character.</p>
     <p><a href="https://github.com/blivesta/chaffle" class="button button-border button-lg">Download on GitHub</a></p>
     <ul class="social list-inline">
 	<li class="btn-gh">
 	  <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=blivesta&amp;repo=chaffle&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
 	</li>
 	<li class="btn-tw">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-text="chaffle is a jquery plug-in that allows you to shuffle randomly character." data-url="http://git.blivesta.com/chaffle/" data-related="blivesta" data-count="1" data-hashtags="">Tweet</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-text="jquery plugin that allows to shuffle randomly character." data-url="http://git.blivesta.com/chaffle/" data-related="blivesta" data-count="1" data-hashtags="">Tweet</a>
 	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 		</script>
 	</li>
-	<li class="btn-gg">
-		<div class="g-plusone" data-size="medium" data-href="http://git.blivesta.com/chaffle/"></div>
-		<script type="text/javascript">
-		  (function() {
-		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		    po.src = 'https://apis.google.com/js/platform.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		  })();
-		</script>
-	</li>
 </ul>       
-  
-    <p>Currently v1.0.0  ･  Authtor :&nbsp; 
+
+    <p>
+      Author&nbsp;:&nbsp;
       <span class="icon-blivesta icon-sm"></span>&nbsp;
       <a href="http://blivesta.com/" target="_blank">blivesta</a>
     <br>
@@ -96,9 +61,9 @@
 </main>
 
 <div class="body">
-    
+
   <div class="container">
-        
+
 
     <div class="section">
       <h2 class="section-title">Example hover</h2>
@@ -122,29 +87,26 @@
       <p class="lead"></p>
       <div class="section-body">
         <p class="lead">Step 1: Link required files</p>
-<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- vendor js --&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- vendor js --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- chaffle js --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./dist/js/jquery.chaffle.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./dist/js/jquery.chaffle.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
 
 <p class="lead">Step 2: HTML markup</p>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;chaffle&quot;</span> <span class="na">data-lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Engligh<span class="nt">&lt;/a&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;chaffle&quot;</span> <span class="na">data-lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Engligh<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;chaffle&quot;</span> <span class="na">data-lang=</span><span class="s">&quot;ja&quot;</span><span class="nt">&gt;</span>日本語（漢字）<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;chaffle&quot;</span> <span class="na">data-lang=</span><span class="s">&quot;ja-hiragana&quot;</span><span class="nt">&gt;</span>ひらがな<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;chaffle&quot;</span> <span class="na">data-lang=</span><span class="s">&quot;ja-katakana&quot;</span><span class="nt">&gt;</span>カタカナ<span class="nt">&lt;/a&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;chaffle&quot;</span> <span class="na">data-lang=</span><span class="s">&quot;ja-katakana&quot;</span><span class="nt">&gt;</span>カタカナ<span class="nt">&lt;/a&gt;</span></code></pre></div>
 
 
 <p class="lead">Step 3: Call the chaffle</p>
-<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.chaffle&#39;</span><span class="p">).</span><span class="nx">chaffle</span><span class="p">({</span>
     <span class="nx">speed</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
     <span class="nx">time</span><span class="o">:</span> <span class="mi">140</span>
   <span class="p">});</span>
-<span class="p">});</span> 
-</code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 
       </div>
@@ -152,38 +114,29 @@
 
   </div><!-- /.container -->
 </div><!-- /.body -->
-  
 
 
     <footer class="footer">
   <div class="container">
-    
-    <ul class="social-folow list-inline">
-	<li style="width:126px">
-	  <iframe class="github-btn" src="" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
+    <ul class="social list-inline">
+	<li class="btn-gh">
+	  <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=blivesta&amp;repo=chaffle&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
 	</li>
-	<li>
-		<a href="https://twitter.com/blivesta" class="twitter-follow-button" data-show-count="false">Follow @blivesta</a>
+	<li class="btn-tw">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-text="jquery plugin that allows to shuffle randomly character." data-url="http://git.blivesta.com/chaffle/" data-related="blivesta" data-count="1" data-hashtags="">Tweet</a>
 	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-		</script>		
+		</script>
 	</li>
-
 </ul>       
 
-    
-    <hr>
-    
+
     <ul class="list-inline">
-      <li>Currently v1.0.0</li>
-      <li>·</li>
-      <li>Code licensed under the MIT.</li>
-      <li>·</li>
       <li>
         Author&nbsp;<span class="icon-blivesta icon-sm icon-circle"></span>&nbsp;
         <a href="http://blivesta.com">blivesta</a>
       </li>
     </ul>
-    
+
     <ul class="list-inline">
       <li>Other projects</li>
       <li>·</li>
@@ -199,6 +152,25 @@
     </ul>
   </div>
 </footer>
+
+
+<!-- Google analytics -->
+<script src="//git.blivesta.com/js/ga.js"></script>
+
+<!-- Vendor js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- chaffle js -->
+<script src="./js/jquery.chaffle.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".chaffle").chaffle();
+
+});
+
+</script>
+
 
   </div><!-- /.site-wrapper -->
 </body>
