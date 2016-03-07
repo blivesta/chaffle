@@ -64,6 +64,9 @@
            case "ja-katakana":
             str = String.fromCharCode(12448 + Math.round(Math.random() * 84));
             break;
+           case "ua":
+              str = String.fromCharCode(1040 + Math.round(Math.random() * 55));
+              break;
           }
           return str;
         };

@@ -1,6 +1,7 @@
 chaffle
 ==================
 chaffle is a jquery plug-in that allows you to shuffle randomly character.
+- Added cyrillic.
 
 ##example
 http://blivesta.github.io/chaffle/
@@ -24,6 +25,7 @@ http://blivesta.github.io/chaffle/
 	<li><a href="#" class="chaffle" data-lang="ja">日本語（漢字）</a></li>
 	<li><a href="#" class="chaffle" data-lang="ja-hiragana">ひらがな</a></li>
 	<li><a href="#" class="chaffle" data-lang="ja-katakana">カタカナ</a></li>
+	<li><a href="#" class="chaffle" data-lang="ua">Українська</a></li>
 </ul>
 ```
 
