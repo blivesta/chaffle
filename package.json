@@ -1,19 +1,20 @@
 {
   "name": "chaffle",
-  "description": "",
   "version": "1.0.0",
-  "keywords": [],
-  "homepage": "http://git.blivesta.com/chaffle",
-  "author": "blivesta",
-  "authorUrl": "http://blivesta.com",
-  "licenses": "MIT",
-  "repository": {
-    "user": "blivesta",
-    "type": "git"
+  "description": "Shuffle Randomly Character",
+  "main": "chaffle.js",
   },
   "devDependencies": {
+  "repository": {
+    "url": "https://github.com/blivesta/chaffle.git",
+    "type": "git"
   },
-  "engines": {
-    "node": ">=0.10.1"
+  "license": "MIT",
+  "keywords": [
+    "effect"
+  ],
+  "author": {
+    "name": "blivesta",
+    "url": "http://www.blivesta.com"
   }
 }

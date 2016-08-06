@@ -1,0 +1,22 @@
+{
+  "rules": {
+    "comma-dangle": [2, "always-multiline"],
+  },
+  "extends": [ "standard" ],
+  "globals": {
+    "define": true,
+    "describe": true,
+    "before": true,
+    "after": true,
+    "it": true,
+    "expect": true
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+}
