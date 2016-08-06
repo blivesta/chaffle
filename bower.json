@@ -2,7 +2,7 @@
   "name": "chaffle",
   "description": "Shuffle Randomly Character.",
   "main": [
-    'chaffle.min.js'
+    "chaffle.min.js"
   ],
   "ignore": [
     ".*"
