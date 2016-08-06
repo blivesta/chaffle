@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "Shuffle Randomly Character",
   "main": "chaffle.js",
+  "scripts": {
+    "deploy:copy": "mkdir -p gh-pages && cp -f index.html gh-pages && cp -f chaffle.min.js gh-pages",
+    "deploy:remove": "rm -r gh-pages",
+    "deploy:ghp": "git subtree push --prefix gh-pages origin gh-pages",
+    "deploy": "npm run lint && && npm run test npm run minify && npm run deploy:copy && npm run deploy:ghp && npm run deploy:remove",
+    "dev": "karma start",
+    "lint": "eslint chaffle.js",
+    "minify": "uglifyjs chaffle.js -o chaffle.min.js",
+    "start": "npm run lint && npm run minify && npm run dev",
+    "serve": "browser-sync start --server ./ --files index.html",
+    "test": "karma start --single-run"
   },
   "devDependencies": {
     "browser-sync": "^2.14.0",
