@@ -1,33 +1,90 @@
-chaffle
-==================
-chaffle is a jquery plug-in that allows you to shuffle randomly character.
-- Added cyrillic.
+# Chaffle
 
-##example
-http://blivesta.github.io/chaffle/
+[![npm version](https://img.shields.io/npm/v/chaffle.svg?style=flat-square)](https://www.npmjs.com/package/chaffle)
+![Bower version](https://img.shields.io/bower/v/chaffle.svg?style=flat-square)
+[![Build Status](https://img.shields.io/travis/blivesta/chaffle/master.svg?style=flat-square)](https://travis-ci.org/blivesta/chaffle)
 
-##Setup
-```
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="./dist/jquery.chaffle.min.js"></script>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-  	$('.chaffle').chaffle({
-      speed: 20,
-      time: 60
-  	});
-	});		
-</script>
+Shuffle Randomly Character.
 
-<ul class="nav">
-	<li><a href="#" class="chaffle" data-lang="en">Engligh</a></li>
-	<li><a href="#" class="chaffle" data-lang="ja">日本語（漢字）</a></li>
-	<li><a href="#" class="chaffle" data-lang="ja-hiragana">ひらがな</a></li>
-	<li><a href="#" class="chaffle" data-lang="ja-katakana">カタカナ</a></li>
-	<li><a href="#" class="chaffle" data-lang="ua">Українська</a></li>
-</ul>
+## Demo
+
+http://git.blivesta.com/chaffle/
+
+## Install
+
+```html
+<script src="YOUR-PROJECT/chaffle.min.js"></script>
+<!-- OR CDN -->
+<script src="https://npmcdn.com/chaffle/chaffle.min.js"></script>
 ```
 
-##License
+npm
+
+```html
+$ npm install chaffle
+```
+
+## Usage
+
+### Markup
+
+```html
+<p data-chaffle="en">English</p>
+<p data-chaffle="ja">日本語</p>
+<p data-chaffle="ja-hiragana">ひらがな</p>
+<p data-chaffle="ja-katakana">カタカナ</p>
+<p data-chaffle="ua">Українська</p>
+<!-- data options -->
+<p data-chaffle="en" data-chaffle-speed="100" data-chaffle-delay="200">Data options</p>
+```
+
+### Call the Chaffle
+
+```js
+const elements = document.querySelectorAll('[data-chaffle]');
+Array.prototype.forEach.call(elements, function (el) {
+  const chaffle = new Chaffle(el, { /* options */ });
+  chaffle.init();
+});
+```
+
+e.g: mouseover
+
+```js
+import Chaffle from 'chaffle';
+
+const elements = document.querySelectorAll('[data-chaffle]');
+Array.prototype.forEach.call(elements, function (el) {
+  const chaffle = new Chaffle(el, { /* options */ });
+  el.addEventListener('mouseover', function () {
+    chaffle.init();
+  });
+});
+```
+
+## Options
+
+```html
+<p
+  data-chaffle="en"
+  data-chaffle-speed="100"
+  data-chaffle-delay="200"
+>
+  Data options
+</p>
+```
+
+OR
+
+```js
+var chaffle  = new Chaffle(el, {
+  lang: 'en', // default: 'en'
+  // 'en' || 'ja' || 'ja-hiragana' || 'ja-katakana' || 'ua'
+  speed: 20, // default: 20
+  delay: 100, // default: 100
+})
+```
+
+## License
 Released under the MIT license.
