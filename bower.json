@@ -1,17 +1,11 @@
 {
   "name": "chaffle",
-  "version": "1.0.0",
-  "main": [],
+  "description": "Shuffle Randomly Character.",
+  "main": [
+    'chaffle.min.js'
+  ],
   "ignore": [
     ".*"
   ],
-  "devDependencies": {
-    "cooker": "~0.4.8"
-  },
-  "exportsOverride": {
-    "cooker": {
-      "css": "dist/css/",
-      "less": "dist/less/"
-    }
-  }
+  "homepage": "http://git.blivesta.com/chaffle"
 }
