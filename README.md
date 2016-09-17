@@ -16,7 +16,7 @@ http://git.blivesta.com/chaffle/
 ```html
 <script src="YOUR-PROJECT/chaffle.min.js"></script>
 <!-- OR CDN -->
-<script src="https://npmcdn.com/chaffle/chaffle.min.js"></script>
+<script src="https://unpkg.com/chaffle/chaffle.min.js"></script>
 ```
 
 npm
