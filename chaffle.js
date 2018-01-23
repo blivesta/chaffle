@@ -145,7 +145,7 @@
           break
 
         case 'ja-hiragana':
-          str = String.fromCharCode(12352 + Math.round(Math.random() * 85))
+          str = String.fromCharCode(12353 + Math.round(Math.random() * 85))
           break
 
         case 'ja-katakana':
