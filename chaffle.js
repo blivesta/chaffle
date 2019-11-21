@@ -155,6 +155,10 @@
         case 'ua':
           str = String.fromCharCode(1040 + Math.round(Math.random() * 55))
           break
+
+        case 'cn':
+          str = String.fromCharCode(19968 + Math.floor(Math.random() * 20901))
+          break
       }
       return str
     },

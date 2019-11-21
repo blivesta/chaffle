@@ -35,6 +35,7 @@ $ npm install chaffle
 <p data-chaffle="ja-hiragana">ひらがな</p>
 <p data-chaffle="ja-katakana">カタカナ</p>
 <p data-chaffle="ua">Українська</p>
+<p data-chaffle="cn">中文</p>
 <!-- data options -->
 <p data-chaffle="en" data-chaffle-speed="100" data-chaffle-delay="200">Data options</p>
 ```
@@ -80,7 +81,7 @@ OR
 ```js
 var chaffle  = new Chaffle(el, {
   lang: 'en', // default: 'en'
-  // 'en' || 'ja' || 'ja-hiragana' || 'ja-katakana' || 'ua'
+  // 'en' || 'ja' || 'ja-hiragana' || 'ja-katakana' || 'ua' || 'cn'
   speed: 20, // default: 20
   delay: 100, // default: 100
 })
