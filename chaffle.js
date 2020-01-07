@@ -145,11 +145,11 @@
           break
 
         case 'ja-hiragana':
-          str = String.fromCharCode(12352 + Math.round(Math.random() * 50))
+          str = String.fromCharCode(12353 + Math.round(Math.random() * 85))
           break
 
         case 'ja-katakana':
-          str = String.fromCharCode(12448 + Math.round(Math.random() * 84))
+          str = String.fromCharCode(12449 + Math.round(Math.random() * 85))
           break
 
         case 'ua':
