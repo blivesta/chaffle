@@ -1,4 +1,4 @@
-import Chaffle from '../chaffle'
+import Chaffle from '../src/chaffle'
 
 describe('Chaffle', () => {
   before(() => {
