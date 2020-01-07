@@ -3,8 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/chaffle.svg?style=flat-square)](https://www.npmjs.com/package/chaffle)
 [![Build Status](https://img.shields.io/travis/blivesta/chaffle/master.svg?style=flat-square)](https://travis-ci.org/blivesta/chaffle)
 
-
-Shuffle Randomly Character.
+Shuffle Characters Randomly.
 
 ## Demo
 
@@ -36,15 +35,19 @@ $ npm install chaffle
 <p data-chaffle="ua">Українська</p>
 <p data-chaffle="cn">中文</p>
 <!-- data options -->
-<p data-chaffle="en" data-chaffle-speed="100" data-chaffle-delay="200">Data options</p>
+<p data-chaffle="en" data-chaffle-speed="100" data-chaffle-delay="200">
+  Data options
+</p>
 ```
 
 ### Call the Chaffle
 
 ```js
-const elements = document.querySelectorAll('[data-chaffle]');
-Array.prototype.forEach.call(elements, function (el) {
-  const chaffle = new Chaffle(el, { /* options */ });
+const elements = document.querySelectorAll("[data-chaffle]");
+Array.prototype.forEach.call(elements, function(el) {
+  const chaffle = new Chaffle(el, {
+    /* options */
+  });
   chaffle.init();
 });
 ```
@@ -52,12 +55,14 @@ Array.prototype.forEach.call(elements, function (el) {
 e.g: mouseover
 
 ```js
-import Chaffle from 'chaffle';
+import Chaffle from "chaffle";
 
-const elements = document.querySelectorAll('[data-chaffle]');
-Array.prototype.forEach.call(elements, function (el) {
-  const chaffle = new Chaffle(el, { /* options */ });
-  el.addEventListener('mouseover', function () {
+const elements = document.querySelectorAll("[data-chaffle]");
+Array.prototype.forEach.call(elements, function(el) {
+  const chaffle = new Chaffle(el, {
+    /* options */
+  });
+  el.addEventListener("mouseover", function() {
     chaffle.init();
   });
 });
@@ -66,11 +71,7 @@ Array.prototype.forEach.call(elements, function (el) {
 ## Options
 
 ```html
-<p
-  data-chaffle="en"
-  data-chaffle-speed="100"
-  data-chaffle-delay="200"
->
+<p data-chaffle="en" data-chaffle-speed="100" data-chaffle-delay="200">
   Data options
 </p>
 ```
@@ -78,13 +79,14 @@ Array.prototype.forEach.call(elements, function (el) {
 OR
 
 ```js
-var chaffle  = new Chaffle(el, {
-  lang: 'en', // default: 'en'
+var chaffle = new Chaffle(el, {
+  lang: "en", // default: 'en'
   // 'en' || 'ja' || 'ja-hiragana' || 'ja-katakana' || 'ua' || 'cn'
   speed: 20, // default: 20
-  delay: 100, // default: 100
-})
+  delay: 100 // default: 100
+});
 ```
 
 ## License
+
 Released under the MIT license.
