@@ -1,7 +1,6 @@
 # Chaffle
 
 [![npm version](https://img.shields.io/npm/v/chaffle.svg?style=flat-square)](https://www.npmjs.com/package/chaffle)
-![Bower version](https://img.shields.io/bower/v/chaffle.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/blivesta/chaffle/master.svg?style=flat-square)](https://travis-ci.org/blivesta/chaffle)
 
 
