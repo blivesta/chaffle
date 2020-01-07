@@ -8,9 +8,9 @@
     "deploy": "npm run lint && npm run test && npm run deploy:ghp",
     "dev": "karma start",
     "lint": "eslint ./src/chaffle.js",
-    "minify": "uglifyjs ./src/chaffle.js -o ./public/chaffle.min.js",
+    "minify": "uglifyjs ./src/chaffle.js -o ./docs/chaffle.min.js",
     "start": "npm run lint && npm run minify && npm run dev",
-    "serve": "browser-sync start --server ./public --files index.html",
+    "serve": "browser-sync start --server ./docs --files index.html",
     "test": "karma start --single-run"
   },
   "devDependencies": {
