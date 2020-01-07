@@ -1,6 +1,6 @@
 /*!
  * Chaffle
- * Shuffle Randomly Character.
+ * Shuffle Characters Randomly.
  * http://blivesta.github.io/chaffle
  * License : MIT
  * Author : blivesta (http://blivesta.com/)

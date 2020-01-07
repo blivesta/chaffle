@@ -1,7 +1,7 @@
 {
   "name": "chaffle",
   "version": "2.0.0",
-  "description": "Shuffle Randomly Character.",
+  "description": "Shuffle Characters Randomly.",
   "main": "chaffle.js",
   "scripts": {
     "deploy:ghp": "git subtree push --prefix public origin gh-pages",
